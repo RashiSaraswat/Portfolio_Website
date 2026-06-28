@@ -768,11 +768,13 @@ footer{
   <div class="sec">
     <div class="sec-eyebrow">Contact</div>
     <h2 class="sec-title" style="margin-bottom:2rem">Let's work <em>together</em></h2>
+    
     <div class="contact-wrap">
       <div class="contact-left-panel">
         <div>
           <h3>Got an opportunity? I'd love to hear from you.</h3>
           <p>I'm actively looking for placements and internships at product companies. Whether it's a full-time role, a project collab, or just a conversation — reach out.</p>
+          
           <div class="contact-info-item">
             <div class="ci-label">Email</div>
             <div class="ci-val"><a href="mailto:rashi25.saraswat@gmail.com">rashi25.saraswat@gmail.com</a></div>
@@ -786,26 +788,42 @@ footer{
             <div class="ci-val">Bangalore, Karnataka, India</div>
           </div>
         </div>
+        
         <div class="social-row">
           <a href="https://github.com/RashiSaraswat" target="_blank" class="soc-btn">GitHub →</a>
           <a href="https://www.linkedin.com/in/rashi-saraswat/" target="_blank" class="soc-btn">LinkedIn →</a>
         </div>
       </div>
+
       <div class="contact-form-panel">
-        <h4>Send me a message</h4>
-        <form id="cform" novalidate>
-          <label class="flabel" for="fn">Full name</label>
-          <input class="finput" type="text" id="fn" name="name" placeholder="Your name" autocomplete="name"/>
-          <label class="flabel" for="fe">Email address</label>
-          <input class="finput" type="email" id="fe" name="email" placeholder="your@email.com" autocomplete="email"/>
-          <label class="flabel" for="fs">Subject</label>
-          <input class="finput" type="text" id="fs" name="subject" placeholder="Placement opportunity / Collaboration / Other"/>
-          <label class="flabel" for="fm">Message</label>
-          <textarea class="finput ftextarea" id="fm" name="message" placeholder="Tell me what you have in mind..."></textarea>
-          <button type="submit" class="fsubmit">Send message →</button>
-          <p class="form-success-msg" id="fsuccess">✓ Message sent! I'll get back to you soon.</p>
-        </form>
-      </div>
+  <h4>Send me a message</h4>
+  
+  <form id="cform" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    
+    <!-- Anti-spam honeypot -->
+    <p class="hidden">
+      <label>Don’t fill this if you're human: <input name="bot-field"></label>
+    </p>
+
+    <label class="flabel" for="fn">Full name</label>
+    <input class="finput" type="text" id="fn" name="name" placeholder="Your name" required autocomplete="name"/>
+
+    <label class="flabel" for="fe">Email address</label>
+    <input class="finput" type="email" id="fe" name="email" placeholder="your@email.com" required autocomplete="email"/>
+
+    <label class="flabel" for="fs">Subject</label>
+    <input class="finput" type="text" id="fs" name="subject" placeholder="Placement opportunity / Collaboration / Other" required/>
+
+    <label class="flabel" for="fm">Message</label>
+    <textarea class="finput ftextarea" id="fm" name="message" placeholder="Tell me what you have in mind..." required></textarea>
+
+    <button type="submit" class="fsubmit">Send message →</button>
+    <p class="form-success-msg" id="fsuccess" style="display:none; color:green; margin-top:1rem;">
+      ✓ Message sent! I'll get back to you soon.
+    </p>
+  </form>
+</div>
     </div>
   </div>
 </section>
